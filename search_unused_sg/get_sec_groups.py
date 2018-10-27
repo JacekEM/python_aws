@@ -1,5 +1,6 @@
 import boto3
 
+
 def main():
     """
     Main method, might take arguments one day.
@@ -7,6 +8,7 @@ def main():
     """
 
     print(get_unused_sg())
+
 
 def get_unused_sg():
     """
@@ -21,7 +23,6 @@ def get_unused_sg():
     assigned_sgs = [] 
     security_groups_ids = set()
 
-
     for sg in all_security_groups["SecurityGroups"]:
         security_groups_ids.add(sg["GroupId"])
 
@@ -34,5 +35,6 @@ def get_unused_sg():
     
     return unassigned_sg
 
-if __name__ ==  "__main__":
+
+if __name__ == "__main__":
     main()
